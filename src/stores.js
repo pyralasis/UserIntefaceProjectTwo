@@ -1,9 +1,10 @@
 import { writable } from 'svelte/store';
 
 class burner {
-    constructor(state, diameter) {
+    constructor(state, diameter, temperature) {
         this.state = state;
         this.diameter = diameter;
+        this.temperature = temperature;
     }
     on(burnerNum) {
         this.state = "on"
@@ -13,4 +14,4 @@ class burner {
     }
 }
 
-export const burners = writable([new burner("off", 100), new burner("on", 200)]);
+export const burners = writable([new burner("off", 100, 0), new burner("on", 200, 5)]);

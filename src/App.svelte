@@ -8,7 +8,11 @@
 
 <main>
   {#each $burners as burner}
-    <Burner diameter={burner.diameter} state={burner.state}></Burner>
+    <Burner
+      diameter={burner.diameter}
+      state={burner.state}
+      temperature={burner.temperature}
+    ></Burner>
   {/each}
 </main>
 
