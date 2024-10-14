@@ -6,9 +6,9 @@
     export let temperature; // 0-10; percent of time over 10 seconds the burner is on; eg 5 = 50%
     let simmerstatState = true;
     let simmerstat = () => {
+        let timeOn = 10000 * (temperature / 10);
+        let timeOff = 10000 - timeOn;
         if (state == "on") {
-            let timeOn = 10000 * (temperature / 10);
-            let timeOff = 10000 - timeOn;
             if (simmerstatState) {
                 setTimeout(simmerstat, timeOff);
                 simmerstatState = false;
@@ -16,6 +16,16 @@
                 setTimeout(simmerstat, timeOn);
                 simmerstatState = true;
             }
+        } else {
+            setTimeout(simmerstat, timeOff);
+        }
+    };
+
+    let checkState = () => {
+        if (temperature > 0) {
+            state = "on";
+        } else {
+            state = "off";
         }
     };
     $: {
@@ -66,13 +76,18 @@
         min="0"
         max="10"
         bind:value={temperature}
+        on:change={checkState}
     />
-    <p>{temperature}</p>
+    <div>{temperature}</div>
 </div>
 
 <style>
     #main-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        height: 300px;
+        width: 300px;
+        justify-content: center;
     }
 </style>
