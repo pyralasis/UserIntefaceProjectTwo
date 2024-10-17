@@ -15,6 +15,6 @@ class burner {
 }
 
 export const burners = writable([new burner("off", 100, 0),
-new burner("on", 200, 0),
 new burner("off", 200, 0),
-new burner("on", 100, 0)]);
+new burner("off", 200, 0),
+new burner("off", 100, 0)]);

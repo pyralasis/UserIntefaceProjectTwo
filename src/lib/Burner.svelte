@@ -8,7 +8,7 @@
     let simmerstat = () => {
         let timeOn = 10000 * (temperature / 10);
         let timeOff = 10000 - timeOn;
-        if (state == "on") {
+        if (temperature > 0) {
             if (simmerstatState) {
                 setTimeout(simmerstat, timeOff);
                 simmerstatState = false;
