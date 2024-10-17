@@ -1,5 +1,6 @@
 <script>
     import Burner from "./Burner.svelte";
+    import FanController from "./FanController.svelte";
     import { burners } from "../stores.js";
 </script>
 
@@ -28,6 +29,7 @@
             temperature={$burners[3].temperature}
         ></Burner>
     </div>
+    <FanController></FanController>
 </div>
 
 <style>
