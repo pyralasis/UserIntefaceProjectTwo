@@ -1,14 +1,27 @@
 <script>
     import { fade } from "svelte/transition";
-    export let state;
+    import { burners } from "../stores.js";
     export let diameter;
+    export let burnerNum;
 
-    export let temperature; // 0-10; percent of time over 10 seconds the burner is on; eg 5 = 50%
+    function getTemperature() {
+        return $burners[burnerNum].temperature;
+    }
+
+    function getState() {
+        if (getTemperature() == 0) return "off";
+        return "on";
+    }
+
     let simmerstatState = true;
     let simmerstat = () => {
-        let timeOn = 10000 * (temperature / 10);
+
+        // Debug
+        console.log(burnerNum, getTemperature(), getState())
+
+        let timeOn = 10000 * (getTemperature() / 10);
         let timeOff = 10000 - timeOn;
-        if (temperature > 0) {
+        if (getTemperature() > 0) {
             if (simmerstatState) {
                 setTimeout(simmerstat, timeOff);
                 simmerstatState = false;
@@ -21,13 +34,6 @@
         }
     };
 
-    let checkState = () => {
-        if (temperature > 0) {
-            state = "on";
-        } else {
-            state = "off";
-        }
-    };
     $: {
         simmerstat();
     }
@@ -63,22 +69,11 @@
                 cx={diameter / 2}
                 cy={diameter / 2}
                 r={diameter / 2 - 10}
-                fill="url('#{state}')"
+                fill="url('#{getState()}')"
             />
         {/if}
     </svg>
-
-    <label for="temperature-input">Temperature</label>
-    <input
-        id="temperature-input"
-        type="range"
-        step="1"
-        min="0"
-        max="10"
-        bind:value={temperature}
-        on:change={checkState}
-    />
-    <div>{temperature}</div>
+    <div>{getTemperature()} {getState()}</div>
 </div>
 
 <style>

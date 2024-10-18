@@ -18,7 +18,14 @@
     }
 </script>
 
-<p>Fan Speed:</p>
 <button on:click={cycleSpeed}>
-    {fanText}
+    <img src="src/assets/fan-solid.svg" alt="Fan Speed" width="17" height="17" id="fan-image"/>{fanText}
 </button>
+
+<style>
+    #fan-image {
+        /* Jake: Just using this to make the fan SVG a nice gray, not black. */
+        filter: invert(48%) brightness(118%) contrast(119%);
+        padding-right: 8px;
+    }
+</style>
