@@ -1,5 +1,6 @@
 <script>
-    import {burners} from "../stores.js"
+    import {burners} from "../stores.js";
+
     function burner1and4(){
         $burners[0].temperature = 4;
         $burners[3].temperature = 7;
