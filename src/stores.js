@@ -22,9 +22,20 @@ class burner {
     };
 }
 
+class fan {
+    constructor(testSpeed, testText) {
+        this.fanSpeed = testSpeed;
+        this.fanText = testText;
+    }
+}
+
 export const burners = writable([
     new burner("off", 100, 0),
     new burner("off", 200, 0),
     new burner("off", 200, 0),
     new burner("off", 100, 0)]
 );
+
+export const testFan = writable([
+    new fan(0, "Off"),
+]);

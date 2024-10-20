@@ -1,31 +1,20 @@
 <script>
     import Burner from "./Burner.svelte";
     import FanController from "./FanController.svelte";
-    import { burners } from "../stores.js";
+    import { burners, testFan } from "../stores.js";
 </script>
 
 <div id="main-container">
     <div id="top" class="container-row">
-        <Burner
-            diameter={$burners[0].diameter}
-            burnerNum=0
-        ></Burner>
-        <Burner
-            diameter={$burners[1].diameter}
-            burnerNum=1
-        ></Burner>
+        <Burner diameter={$burners[0].diameter} burnerNum="0"></Burner>
+        <Burner diameter={$burners[1].diameter} burnerNum="1"></Burner>
     </div>
     <div id="bottom" class="container-row">
-        <Burner
-            diameter={$burners[2].diameter}
-            burnerNum=2
-        ></Burner>
-        <Burner
-            diameter={$burners[3].diameter}
-            burnerNum=3
-        ></Burner>
+        <Burner diameter={$burners[2].diameter} burnerNum="2"></Burner>
+        <Burner diameter={$burners[3].diameter} burnerNum="3"></Burner>
     </div>
-    <FanController></FanController>
+    <FanController fanSpeed={$testFan[0].fanSpeed} fanText={$testFan[0].fanText}
+    ></FanController>
 </div>
 
 <style>
