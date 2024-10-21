@@ -15,19 +15,16 @@
         <div id="burner">
             <Burner diameter={$burners[1].diameter} burnerNum="1"></Burner>
             <Timer timerNum="1"></Timer>
-            <p id="countdown1"></p>
         </div>
     </div>
     <div id="bottom" class="container-row">
         <div id="burner">
             <Burner diameter={$burners[2].diameter} burnerNum="2"></Burner>
             <Timer timerNum="2"></Timer>
-            <p id="countdown2"></p>
         </div>
         <div id="burner">
             <Burner diameter={$burners[3].diameter} burnerNum="3"></Burner>
             <Timer timerNum="3"></Timer>
-            <p id="countdown3"></p>
         </div>
     </div>
     <FanController fanSpeed={$testFan[0].fanSpeed} fanText={$testFan[0].fanText}
