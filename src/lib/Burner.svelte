@@ -72,6 +72,32 @@
             />
         {/if}
     </svg>
+    {#if getTemperature() >= 0 && getTemperature() < 3}
+        <hr
+            class="burner-color-indicator"
+            style="background-color: green; height: 2px;"
+        />
+    {:else if getTemperature() >= 3 && getTemperature() < 5}
+        <hr
+            class="burner-color-indicator"
+            style="background-color: blue; height: 2px;"
+        />
+    {:else if getTemperature() >= 5 && getTemperature() < 7}
+        <hr
+            class="burner-color-indicator"
+            style="background-color: yellow; height: 2px;"
+        />
+    {:else if getTemperature() >= 7 && getTemperature() < 9}
+        <hr
+            class="burner-color-indicator"
+            style="background-color: yellow; height: 2px;"
+        />
+    {:else if getTemperature() >= 9 && getTemperature() < 11}
+        <hr
+            class="burner-color-indicator"
+            style="background-color: yellow; height: 2px;"
+        />
+    {/if}
     <div>{getTemperature()} {getState()}</div>
 </div>
 
@@ -83,5 +109,12 @@
         height: 300px;
         width: 300px;
         justify-content: center;
+    }
+
+    .burner-color-indicator {
+        display: flex;
+        height: 2px;
+        width: 100%;
+        margin: 1rem;
     }
 </style>
