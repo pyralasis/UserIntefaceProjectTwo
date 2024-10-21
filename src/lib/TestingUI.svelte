@@ -61,10 +61,9 @@
         Turn Bottom Burners to 5 and Set Fan to High
     </button>
 
-    <button on:click={burner2and4fanMedium}>
-        Turn Top Right and Bottom Right Burners to 3 and Set Fan to High
-    </button>
-</div>
+<button on:click={burner2and4fanMedium}>
+    Turn Top Right and Bottom Right Burners to 3 and Set Fan to Medium
+</button>
 
 <style>
     #main-container {
