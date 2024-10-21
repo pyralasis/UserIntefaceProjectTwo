@@ -3,13 +3,20 @@
     import { burners } from "../stores.js";
     export let diameter;
     export let burnerNum;
+    let temp;
+    let state;
 
     function getTemperature() {
+        temp = $burners[burnerNum].temperature;
         return $burners[burnerNum].temperature;
     }
 
     function getState() {
-        if (getTemperature() == 0) return "off";
+        if (getTemperature() == 0) {
+            state = "off";
+            return "off";
+        }
+        state = "on";
         return "on";
     }
 
@@ -72,7 +79,7 @@
             />
         {/if}
     </svg>
-    <div>{getTemperature()} {getState()}</div>
+    <div>{temp} {state}</div>
 </div>
 
 <style>

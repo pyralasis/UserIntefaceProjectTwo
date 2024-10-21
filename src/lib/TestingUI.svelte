@@ -55,15 +55,16 @@
         Turn Top Right Burner to 5 and Bottom Left Burner to 5
     </button>
 
-    <button on:click={allOff}> Turn All Burners Off </button>
-
     <button on:click={burner3and4fanHigh}>
         Turn Bottom Burners to 5 and Set Fan to High
     </button>
 
-<button on:click={burner2and4fanMedium}>
-    Turn Top Right and Bottom Right Burners to 3 and Set Fan to Medium
-</button>
+    <button on:click={burner2and4fanMedium}>
+        Turn Top Right and Bottom Right Burners to 3 and Set Fan to Medium
+    </button>
+
+    <button on:click={allOff}> Turn All Burners Off </button>
+</div>
 
 <style>
     #main-container {
