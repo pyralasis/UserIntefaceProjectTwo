@@ -30,10 +30,10 @@ class fan {
 }
 
 export const burners = writable([
-    new burner("off", 100, 0),
-    new burner("off", 200, 0),
-    new burner("off", 200, 0),
-    new burner("off", 100, 0)]
+    new burner("off", 125, 0),
+    new burner("off", 150, 0),
+    new burner("off", 175, 0),
+    new burner("off", 200, 0)]
 );
 
 export const testFan = writable([

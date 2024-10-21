@@ -15,9 +15,8 @@
 
     let simmerstatState = true;
     let simmerstat = () => {
-
         // Debug
-        console.log(burnerNum, getTemperature(), getState())
+        console.log(burnerNum, getTemperature(), getState());
 
         let timeOn = 10000 * (getTemperature() / 10);
         let timeOff = 10000 - timeOn;
