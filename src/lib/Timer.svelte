@@ -52,12 +52,20 @@
 <div class="burnerTimer">
     <label for="timer">Timer: </label>
     <div class="timeInput">
-        <label for={timerID}>Hours: </label>
-        <input type="number" id={hoursID} bind:value={setHours} />
-        <label for={timerID}>Minutes: </label>
-        <input type="number" id={minutesID} bind:value={setMinutes} />
-        <label for={timerID}>Seconds: </label>
-        <input type="number" id={secondsID} bind:value={setSeconds} />
+        <div class="time-input-container">
+            <label for={timerID}>Hours</label>
+            <input type="number" id={hoursID} bind:value={setHours} />
+        </div>
+
+        <div class="time-input-container">
+            <label for={timerID}>Minutes</label>
+            <input type="number" id={minutesID} bind:value={setMinutes} />
+        </div>
+
+        <div class="time-input-container">
+            <label for={timerID}>Seconds</label>
+            <input type="number" id={secondsID} bind:value={setSeconds} />
+        </div>
     </div>
     <button id={startID} on:click={startTimer}>Set</button>
     <p id={countdownID}></p>
@@ -77,7 +85,14 @@
     }
     .timeInput {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: left;
+    }
+    .time-input-container {
+        display: flex;
+        flex-direction: column;
+    }
+    input {
+        width: 50px;
     }
 </style>

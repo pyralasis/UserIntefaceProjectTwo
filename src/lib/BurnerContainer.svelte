@@ -7,22 +7,22 @@
 
 <div id="main-container">
     <div id="top" class="container-row">
-        <div id="burner">
+        <div class="burner">
             <Burner diameter={$burners[0].diameter} burnerNum="0"></Burner>
             <Timer timerNum="0"></Timer>
             <p id="countdown0"></p>
         </div>
-        <div id="burner">
+        <div class="burner">
             <Burner diameter={$burners[1].diameter} burnerNum="1"></Burner>
             <Timer timerNum="1"></Timer>
         </div>
     </div>
     <div id="bottom" class="container-row">
-        <div id="burner">
+        <div class="burner">
             <Burner diameter={$burners[2].diameter} burnerNum="2"></Burner>
             <Timer timerNum="2"></Timer>
         </div>
-        <div id="burner">
+        <div class="burner">
             <Burner diameter={$burners[3].diameter} burnerNum="3"></Burner>
             <Timer timerNum="3"></Timer>
         </div>
@@ -44,10 +44,10 @@
         flex-direction: row;
         align-items: center;
     }
-    #burner {
+    .burner {
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 550px;
+        height: 400px;
     }
 </style>

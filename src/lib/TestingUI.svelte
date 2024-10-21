@@ -45,24 +45,38 @@
     }
 </script>
 
-<h2>Testing</h2>
-<button on:click={burner1and4}>
-    Turn Top Left Burner to 4 and Bottom Right Burner to 7
-</button>
+<div id="main-container">
+    <h2>Testing</h2>
+    <button on:click={burner1and4}>
+        Turn Top Left Burner to 4 and Bottom Right Burner to 7
+    </button>
 
-<button on:click={burner2and3}>
-    Turn Top Right Burner to 5 and Bottom Left Burner to 5
-</button>
+    <button on:click={burner2and3}>
+        Turn Top Right Burner to 5 and Bottom Left Burner to 5
+    </button>
 
-<button on:click={allOff}> Turn All Burners Off </button>
+    <button on:click={allOff}> Turn All Burners Off </button>
 
-<button on:click={burner3and4fanHigh}>
-    Turn Bottom Burners to 5 and Set Fan to High
-</button>
+    <button on:click={burner3and4fanHigh}>
+        Turn Bottom Burners to 5 and Set Fan to High
+    </button>
 
-<button on:click={burner2and4fanMedium}>
-    Turn Top Right and Bottom Right Burners to 3 and Set Fan to High
-</button>
+    <button on:click={burner2and4fanMedium}>
+        Turn Top Right and Bottom Right Burners to 3 and Set Fan to High
+    </button>
+</div>
 
 <style>
+    #main-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 500px;
+        width: 300px;
+    }
+    button {
+        height: 75px;
+        width: 300px;
+    }
 </style>

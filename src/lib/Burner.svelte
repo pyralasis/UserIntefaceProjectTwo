@@ -80,8 +80,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 300px;
+        height: 250px;
         width: 300px;
+        min-height: 250px;
+        min-width: 300px;
         justify-content: center;
     }
 </style>
