@@ -51,6 +51,7 @@
 
 <div class="burnerTimer">
     <label for="timer">Timer: </label>
+    <p id={countdownID}></p>
     <div class="timeInput">
         <label for={timerID}>Hours: </label>
         <input type="number" id={hoursID} bind:value={setHours} />
@@ -60,10 +61,14 @@
         <input type="number" id={secondsID} bind:value={setSeconds} />
     </div>
     <button id={startID} on:click={startTimer}>Set</button>
-    <p id={countdownID}></p>
 </div>
 
 <style>
+    p {
+        padding: 0;
+        margin: 0;
+    }
+
     .burnerTimer {
         display: flex;
         flex-direction: column;
