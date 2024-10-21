@@ -51,6 +51,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: 450px;
+        height: 550px;
     }
 </style>

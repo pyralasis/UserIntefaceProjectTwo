@@ -4,21 +4,26 @@
     var hoursID = "hours" + timerNum;
     var minutesID = "minutes" + timerNum;
     var secondsID = "seconds" + timerNum;
+    var startID = "start" + timerNum;
 
     var countdownID = "countdown" + timerNum;
 
     var setHours = 0;
     var setMinutes = 0;
     var setSeconds = 0;
-    var totalSetTimeInMilliseconds =
-        setHours * 3600000 + setMinutes * 60000 + setSeconds * 1000;
-    var timeToCountDownTo = new Date().getTime() + totalSetTimeInMilliseconds;
+    // var timeToCountDownTo = new Date().getTime() + totalSetTimeInMilliseconds;
 
-    var originalTime = new Date().getTime();
+    var originalTime;
+
+    function getCurrentTime() {
+        originalTime = new Date().getTime();
+    }
 
     function getTimer() {
+        var totalSetTimeInMilliseconds =
+            setHours * 3600000 + setMinutes * 60000 + setSeconds * 1000;
         var now = new Date().getTime();
-        var timeLeft = timeToCountDownTo - now;
+        var timeLeft = originalTime + totalSetTimeInMilliseconds - now;
 
         var hours = Math.floor(
             (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
@@ -39,6 +44,7 @@
             document
                 .getElementById(countdownID)
                 .setAttribute("visibility", "hidden");
+        getCurrentTime();
         setInterval(getTimer, 1000);
     }
 </script>
@@ -53,7 +59,7 @@
         <label for={timerID}>Seconds: </label>
         <input type="number" id={secondsID} bind:value={setSeconds} />
     </div>
-    <button on:click={startTimer}>Set</button>
+    <button id={startID} on:click={startTimer}>Set</button>
 </div>
 
 <style>
